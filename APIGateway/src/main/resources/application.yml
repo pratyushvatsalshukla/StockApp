@@ -8,19 +8,19 @@ spring:
     gateway:
       routes:
         - id: UserProfile
-          uri: http://13.201.162.236:8095
+          uri: http://localhost:8095
           predicates:
             - Path=/ProfitPilot/**
         - id: Wishlist
-          uri: http://13.201.162.236:7004
+          uri: http://localhost:7004
           predicates:
             - Path=/wishlist/**
         - id: Stock
-          uri: http://13.201.162.236:8090
+          uri: http://localhost:8090
           predicates:
             - Path=/Stock/**
         - id: Authentication
-          uri: http://13.201.162.236:8089
+          uri: http://localhost:8089
           predicates:
             - Path=/login/**
 

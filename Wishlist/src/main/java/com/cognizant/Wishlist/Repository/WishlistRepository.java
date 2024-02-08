@@ -11,7 +11,7 @@ import com.cognizant.Wishlist.Exception.WishListNotFoundException;
 import com.cognizant.Wishlist.Model.WishlistStock;
 @Repository
 public interface WishlistRepository extends JpaRepository<WishlistStock, Long>{
-	Optional<WishlistStock> findByEmailAndSymbol(String email, String symbol);
+	Optional<WishlistStock> findByEmailAndName(String email, String name);
 	List<WishlistStock> findByEmail(String email);
 	
 

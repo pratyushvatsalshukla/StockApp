@@ -5,7 +5,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +17,6 @@ import com.cognizant.Authentication.Service.ServiceAuth;
 
 
 @RestController
-@CrossOrigin(origins = "*")
 public class ControllerAuthentication {
 	 @Autowired
 	    ServiceAuth authService;
@@ -32,7 +30,6 @@ public class ControllerAuthentication {
 	            if(result)
 	            {
 	                Map<String, String> token= new JwtTokenGen().generateToken(userAuth);
-	                
 	                return new ResponseEntity<Map>(token,HttpStatus.OK);
 	            }else if (result == false) {
 	                throw new UserNotFoundException("Email / password mismatch");

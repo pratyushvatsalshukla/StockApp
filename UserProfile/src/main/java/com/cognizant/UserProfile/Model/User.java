@@ -11,7 +11,7 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 public class User {
 	 @Id
-	    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long userid;
 	    @NotBlank(message="name is mandotory")
 	    private String name;
