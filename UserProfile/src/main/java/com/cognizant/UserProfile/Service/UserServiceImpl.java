@@ -53,8 +53,7 @@ public class UserServiceImpl implements UserService{
 	    //add the user details in db
 	    @Override
 	    public User addUser(User user) throws UserAlreadyExistException {
-	      //  Optional<User> existingUser = userRepository.findById(user.getUserid());
-	        Optional<User> existingUser = userRepository.getUserByEmail(user.getEmail());
+	        Optional<User> existingUser = userRepository.findById(user.getUserid());
 	        if (existingUser.isPresent()) {
 	            throw new UserAlreadyExistException("User already exist");
 	        }

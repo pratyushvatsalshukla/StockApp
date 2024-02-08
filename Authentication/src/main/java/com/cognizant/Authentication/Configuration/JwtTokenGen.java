@@ -11,7 +11,6 @@ import com.cognizant.Authentication.Model.UserAuth;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import jakarta.validation.constraints.Email;
 
 @Service
 public class JwtTokenGen {
@@ -28,7 +27,6 @@ public class JwtTokenGen {
                 .setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS256, "secret").compact();
         jwtTokenMap.put("token", jwtToken);
-        jwtTokenMap.put("email", user.getEmail());
         jwtTokenMap.put("message", "Login Successful");
         System.out.println("Token Generated");
         return jwtTokenMap;
